@@ -1,0 +1,17 @@
+.login-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-col{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-input{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
