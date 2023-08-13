@@ -11,12 +11,12 @@ const bbdd = [{
     contraseña:'yoel123'
 }]
 
-export function saludar (){
-    console.log("Hola buenas noches")
-}
+// export function saludar (){
+//     console.log("Hola buenas noches")
+// }
 
-export function traerUsuario(){
-    console.log("")
-}
+// export function traerUsuario(){
+//     console.log("")
+// }
 
 export default bbdd;
