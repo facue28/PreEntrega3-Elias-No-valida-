@@ -1,7 +1,7 @@
 import productosDisponibles from '../datos/bbdd-productos.js'
 
-// const carrito = JSON.parse(localStorage.getItem("carrito"));
-const carrito = []
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 const contenedor = document.querySelector("#container-productos");
 
 productosDisponibles.forEach(producto => {
@@ -18,18 +18,31 @@ productosDisponibles.forEach(producto => {
 
     contenedor.appendChild(div)
 
-    const buttonsCombra = document.querySelectorAll(".buttonCompra")
-    
 
+
+    const buttonCompra = document.querySelectorAll(".buttonCompra")
+    buttonCompra.forEach((button) => {
+        button.addEventListener("click",(event) => {
+                const productId = parseInt(event.target.getAttribute("id"));
+                const productFind = productosDisponibles.find(producto => producto.id === productId); 
+                if (productFind) {
+                    carrito.push(productFind);
+                    console.log(`Producto:  ${productFind.nombre} .Agregado al carrito`)
+                }
+        });
+    })
 })
 
-// buttonsCombra.forEach((button) => {
-//     button.addEventListener("click",() => {
-//         const buttonId = parseInt(button.getAttribute("id"));
-//         const productFind = productosDisponibles.find((producto) => producto.id === buttonId);
-        
-//         // carrito.push(productFind);
-//         // localStorage.setItem("carrito", JSON.stringify(carrito));
-//         // console.log(carrito)
-//     })
-// });
+
+
+
+// buttonLogin.addEventListener("click",()=>{
+
+//     const userFind = bbdd.find((registro) => user.usuario === registro.usuario && user.contraseña === registro.contraseña)
+//      if(userFind){ 
+//          bienvenidaAlUsuario(userFind.usuario);
+//          localStorage.setItem("usuario",JSON.stringify(userFind));
+//      }else{
+//          console.log("flaco no existis");
+//      }
+//  });

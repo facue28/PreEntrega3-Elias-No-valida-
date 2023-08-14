@@ -6,20 +6,22 @@ let user = {
 }
 
 const buttonLogin = document.getElementById("login-button");
-
-const inputs = document.querySelectorAll("input"); 
 const form = document.querySelector("form")
+const inputs = document.querySelectorAll("input"); 
 
-buttonLogin.addEventListener("click",(e)=>{
-e.preventDefault();
-    const userFind = bbdd.find((registro) => user.usuario === registro.usuario && user.contraseña === registro.contraseña)
-        if(!userFind){ 
-            alert("Contraseña o usuario incorrecto");
-            form.reset();
-            return;
-        }
-        window.location.href = '/products.html';
-        localStorage.setItem("usuario",JSON.stringify(userFind));
+
+
+
+buttonLogin.addEventListener("click",(event)=>{
+event.preventDefault();
+const userFind = bbdd.find((registro) => user.usuario === registro.usuario && user.contraseña === registro.contraseña)
+    if(!userFind){ 
+        alert("Contraseña o usuario incorrecto");
+        form.reset();
+        return;
+    }
+    localStorage.setItem("usuario",JSON.stringify(userFind));
+    window.location.href = '/products.html';
 });
 
 
