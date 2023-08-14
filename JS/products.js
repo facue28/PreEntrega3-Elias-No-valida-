@@ -20,29 +20,19 @@ productosDisponibles.forEach(producto => {
 
 
 
-    const buttonCompra = document.querySelectorAll(".buttonCompra")
+    const buttonCompra = document.querySelectorAll(".buttonCompra");
     buttonCompra.forEach((button) => {
-        button.addEventListener("click",(event) => {
-                const productId = parseInt(event.target.getAttribute("id"));
-                const productFind = productosDisponibles.find(producto => producto.id === productId); 
-                if (productFind) {
-                    carrito.push(productFind);
-                    console.log(`Producto:  ${productFind.nombre} .Agregado al carrito`)
-                }
+        button.addEventListener("click", (event) => {
+            const productId = parseInt(event.target.getAttribute("id"));
+            const productFind = productosDisponibles.find((producto) => producto.id === productId
+            );
+            if (productFind) {
+                carrito.push(productFind);
+                console.log(`Producto: ${productFind.nombre}. Agregado al carrito`);
+                localStorage.setItem("carrito", JSON.stringify(carrito));
+            }
         });
-    })
+    });
 })
 
 
-
-
-// buttonLogin.addEventListener("click",()=>{
-
-//     const userFind = bbdd.find((registro) => user.usuario === registro.usuario && user.contraseña === registro.contraseña)
-//      if(userFind){ 
-//          bienvenidaAlUsuario(userFind.usuario);
-//          localStorage.setItem("usuario",JSON.stringify(userFind));
-//      }else{
-//          console.log("flaco no existis");
-//      }
-//  });
