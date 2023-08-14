@@ -67,7 +67,7 @@ const productosDisponibles = [
         nombre: "Empanadas de JyQ" ,
         precio: 1860 ,
         categoria: "congelados" ,
-        Image: "https://acdn.mitiendanube.com/stores/233/164/products/f08f030c-a67f-43e2-be28-5091778365ab1-fe55c00784f4fa8c0016329562200653-480-0.webp"
+        Image: `../img/foto-blog2.png`
 
     },
     {
