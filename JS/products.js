@@ -17,10 +17,8 @@ productosDisponibles.forEach(producto => {
     </div>`
 
     contenedor.appendChild(div)
-
-
-
-    const buttonCompra = document.querySelectorAll(".buttonCompra");
+});
+const buttonCompra = document.querySelectorAll(".buttonCompra");
     buttonCompra.forEach((button) => {
         button.addEventListener("click", (event) => {
             const productId = parseInt(event.target.getAttribute("id"));
@@ -31,7 +29,7 @@ productosDisponibles.forEach(producto => {
                 console.log(`Producto: ${productFind.nombre}. Agregado al carrito`);
                 localStorage.setItem("carrito", JSON.stringify(carrito));
             }
-        });
+        
     });
 })
 
