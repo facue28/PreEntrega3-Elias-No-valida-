@@ -10,8 +10,6 @@ const form = document.querySelector("form")
 const inputs = document.querySelectorAll("input"); 
 
 
-
-
 buttonLogin.addEventListener("click",(event)=>{
 event.preventDefault();
 const userFind = bbdd.find((registro) => user.usuario === registro.usuario && user.contraseña === registro.contraseña)
